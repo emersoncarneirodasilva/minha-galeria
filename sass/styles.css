@@ -1,0 +1,543 @@
+.svg {
+  min-width: 60px;
+  font-weight: 400;
+  padding: 0.6rem 2rem;
+  color: #fff;
+  border: 2px solid #fff;
+}
+
+* {
+  font-family: "josefin sans";
+  padding: 0;
+  margin: 0;
+  scroll-behavior: smooth;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  background-color: #000;
+  color: #777;
+}
+
+body a {
+  text-decoration: none;
+  color: #777;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+body ul {
+  list-style: none;
+}
+
+.header {
+  z-index: 2;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  min-width: 100%;
+  position: absolute;
+  max-width: 1170px;
+  padding: 1.5rem 0;
+  margin: 0 auto;
+  padding: 1.5rem 5.5rem;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+@media (max-width: 425px) {
+  .header {
+    padding: 1.1rem;
+  }
+}
+
+.header-brand {
+  font-size: 2rem;
+  color: #fff;
+}
+
+.header-brand span {
+  color: #20c997;
+}
+
+.header-navbar ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  height: 100%;
+}
+
+@media (max-width: 425px) {
+  .header-navbar ul {
+    display: none;
+  }
+}
+
+.header-navbar ul li {
+  margin: 0 1rem;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+}
+
+.header-navbar ul li .active {
+  color: #20c997;
+}
+
+.header-navbar ul li a {
+  color: #fff;
+}
+
+.header-navbar ul li a:hover {
+  color: #20c997;
+}
+
+.header-social-media ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  height: 100%;
+}
+
+@media (max-width: 425px) {
+  .header-social-media ul {
+    display: none;
+  }
+}
+
+.header-social-media ul li {
+  margin: 0 1rem;
+}
+
+.header-social-media ul li a:hover {
+  color: #fff;
+}
+
+.home {
+  width: 100%;
+  height: 100vh;
+  display: block;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  background-image: url("../images/natureza.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  -webkit-filter: opacity(45%);
+          filter: opacity(45%);
+  -webkit-transition: 0.6s;
+  transition: 0.6s;
+  cursor: pointer;
+  -webkit-transition-property: all;
+  transition-property: all;
+  -webkit-transition-timing-function: ease-in-out;
+          transition-timing-function: ease-in-out;
+}
+
+.home.none {
+  -webkit-animation: clip 3s;
+          animation: clip 3s;
+}
+
+.home div {
+  text-align: center;
+}
+
+.home div h1 {
+  padding: 1rem;
+}
+
+.home div p {
+  display: block;
+  padding-bottom: .5rem;
+}
+
+.home div h1, .home div p {
+  color: #fff;
+}
+
+.home div a {
+  @extends .sgv;
+  height: 60px;
+  margin: 0 auto;
+  cursor: pointer;
+  display: inline-block;
+  -webkit-animation: bounce 0.7s infinite;
+          animation: bounce 0.7s infinite;
+}
+
+.home div a svg {
+  width: 100%;
+  height: 100%;
+  color: #20c997;
+}
+
+.gallery {
+  display: -ms-grid;
+  display: grid;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-grid-columns: (1fr)[3];
+      grid-template-columns: repeat(3, 1fr);
+  grid-gap: 2rem;
+  max-width: 1170px;
+  padding: 1.5rem 0;
+  margin: 0 auto;
+  padding: 3rem 0;
+}
+
+@media (max-width: 1080px) {
+  .gallery {
+    padding: 3rem;
+    -ms-grid-columns: (1fr)[2];
+        grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .gallery {
+    -ms-grid-columns: (1fr)[1];
+        grid-template-columns: repeat(1, 1fr);
+  }
+}
+
+.gallery-card {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 100%;
+  height: 400px;
+  margin-bottom: 4%;
+  color: #fff;
+}
+
+@media (max-width: 425px) {
+  .gallery-card {
+    width: 90%;
+    margin-bottom: 6%;
+  }
+}
+
+.gallery-card-title {
+  font-size: 2rem;
+  font-weight: 300;
+  margin-bottom: 1rem;
+}
+
+.gallery-card-btn {
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 400;
+  padding: 0.6rem 2rem;
+  border: 2px solid #fff;
+  color: #fff;
+}
+
+.gallery-card-btn:hover {
+  border: #20c997;
+  background-color: #20c997;
+  color: #000;
+}
+
+.gallery #card-1 {
+  background-image: url("../images/animais.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  -webkit-filter: grayscale(100%);
+          filter: grayscale(100%);
+  -webkit-transition: 0.6s;
+  transition: 0.6s;
+  cursor: pointer;
+}
+
+.gallery #card-1:hover {
+  background-size: 110%;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.5)), to(rgba(0, 0, 0, 0.5))), url("../images/animais.jpg");
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../images/animais.jpg");
+  -webkit-filter: grayscale(0%);
+          filter: grayscale(0%);
+}
+
+.gallery #card-2 {
+  background-image: url("../images/arquitetura.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  -webkit-filter: grayscale(100%);
+          filter: grayscale(100%);
+  -webkit-transition: 0.6s;
+  transition: 0.6s;
+  cursor: pointer;
+}
+
+.gallery #card-2:hover {
+  background-size: 110%;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.5)), to(rgba(0, 0, 0, 0.5))), url("../images/arquitetura.jpg");
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../images/arquitetura.jpg");
+  -webkit-filter: grayscale(0%);
+          filter: grayscale(0%);
+}
+
+.gallery #card-3 {
+  background-image: url("../images/cidade.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  -webkit-filter: grayscale(100%);
+          filter: grayscale(100%);
+  -webkit-transition: 0.6s;
+  transition: 0.6s;
+  cursor: pointer;
+}
+
+.gallery #card-3:hover {
+  background-size: 110%;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.5)), to(rgba(0, 0, 0, 0.5))), url("../images/cidade.jpg");
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../images/cidade.jpg");
+  -webkit-filter: grayscale(0%);
+          filter: grayscale(0%);
+}
+
+.gallery #card-4 {
+  background-image: url("../images/decoracao.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  -webkit-filter: grayscale(100%);
+          filter: grayscale(100%);
+  -webkit-transition: 0.6s;
+  transition: 0.6s;
+  cursor: pointer;
+}
+
+.gallery #card-4:hover {
+  background-size: 110%;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.5)), to(rgba(0, 0, 0, 0.5))), url("../images/decoracao.jpg");
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../images/decoracao.jpg");
+  -webkit-filter: grayscale(0%);
+          filter: grayscale(0%);
+}
+
+.gallery #card-5 {
+  background-image: url("../images/esportes.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  -webkit-filter: grayscale(100%);
+          filter: grayscale(100%);
+  -webkit-transition: 0.6s;
+  transition: 0.6s;
+  cursor: pointer;
+}
+
+.gallery #card-5:hover {
+  background-size: 110%;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.5)), to(rgba(0, 0, 0, 0.5))), url("../images/esportes.jpg");
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../images/esportes.jpg");
+  -webkit-filter: grayscale(0%);
+          filter: grayscale(0%);
+}
+
+.gallery #card-6 {
+  background-image: url("../images/natureza.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  -webkit-filter: grayscale(100%);
+          filter: grayscale(100%);
+  -webkit-transition: 0.6s;
+  transition: 0.6s;
+  cursor: pointer;
+}
+
+.gallery #card-6:hover {
+  background-size: 110%;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.5)), to(rgba(0, 0, 0, 0.5))), url("../images/natureza.jpg");
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../images/natureza.jpg");
+  -webkit-filter: grayscale(0%);
+          filter: grayscale(0%);
+}
+
+.gallery #card-7 {
+  background-image: url("../images/paisagem.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  -webkit-filter: grayscale(100%);
+          filter: grayscale(100%);
+  -webkit-transition: 0.6s;
+  transition: 0.6s;
+  cursor: pointer;
+}
+
+.gallery #card-7:hover {
+  background-size: 110%;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.5)), to(rgba(0, 0, 0, 0.5))), url("../images/paisagem.jpg");
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../images/paisagem.jpg");
+  -webkit-filter: grayscale(0%);
+          filter: grayscale(0%);
+}
+
+.gallery #card-8 {
+  background-image: url("../images/pessoas.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  -webkit-filter: grayscale(100%);
+          filter: grayscale(100%);
+  -webkit-transition: 0.6s;
+  transition: 0.6s;
+  cursor: pointer;
+}
+
+.gallery #card-8:hover {
+  background-size: 110%;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.5)), to(rgba(0, 0, 0, 0.5))), url("../images/pessoas.jpg");
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../images/pessoas.jpg");
+  -webkit-filter: grayscale(0%);
+          filter: grayscale(0%);
+}
+
+.gallery #card-9 {
+  background-image: url("../images/refeicoes.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  -webkit-filter: grayscale(100%);
+          filter: grayscale(100%);
+  -webkit-transition: 0.6s;
+  transition: 0.6s;
+  cursor: pointer;
+}
+
+.gallery #card-9:hover {
+  background-size: 110%;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.5)), to(rgba(0, 0, 0, 0.5))), url("../images/refeicoes.jpg");
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../images/refeicoes.jpg");
+  -webkit-filter: grayscale(0%);
+          filter: grayscale(0%);
+}
+
+footer {
+  text-align: center;
+  padding: 2rem;
+}
+
+footer span {
+  font-weight: bold;
+  color: #20c997;
+}
+
+@-webkit-keyframes bounce {
+  from {
+    -webkit-transform: translateY(-5px);
+            transform: translateY(-5px);
+  }
+  to {
+    -webkit-transform: translateY(0px);
+            transform: translateY(0px);
+  }
+}
+
+@keyframes bounce {
+  from {
+    -webkit-transform: translateY(-5px);
+            transform: translateY(-5px);
+  }
+  to {
+    -webkit-transform: translateY(0px);
+            transform: translateY(0px);
+  }
+}
+
+@-webkit-keyframes clip {
+  0% {
+    -webkit-clip-path: polygon(100% 0%, 100% 0%, 0% 100%, 0% 100%);
+            clip-path: polygon(100% 0%, 100% 0%, 0% 100%, 0% 100%);
+    -webkit-transition: -webkit-clip-path 1s aese-out;
+    transition: -webkit-clip-path 1s aese-out;
+    transition: clip-path 1s aese-out;
+    transition: clip-path 1s aese-out, -webkit-clip-path 1s aese-out;
+  }
+  25% {
+    -webkit-clip-path: polygon(100% 100%, 100% 0%, 0% 100%, 0% 100%);
+            clip-path: polygon(100% 100%, 100% 0%, 0% 100%, 0% 100%);
+    -webkit-transition: -webkit-clip-path 2s aese-out;
+    transition: -webkit-clip-path 2s aese-out;
+    transition: clip-path 2s aese-out;
+    transition: clip-path 2s aese-out, -webkit-clip-path 2s aese-out;
+  }
+  50% {
+    background: #26976a;
+    -webkit-clip-path: polygon(100% 0%, 0% 0%, 0% 0%, 0% 100%);
+            clip-path: polygon(100% 0%, 0% 0%, 0% 0%, 0% 100%);
+    -webkit-transition: -webkit-clip-path 1s aese-out;
+    transition: -webkit-clip-path 1s aese-out;
+    transition: clip-path 1s aese-out;
+    transition: clip-path 1s aese-out, -webkit-clip-path 1s aese-out;
+  }
+}
+
+@keyframes clip {
+  0% {
+    -webkit-clip-path: polygon(100% 0%, 100% 0%, 0% 100%, 0% 100%);
+            clip-path: polygon(100% 0%, 100% 0%, 0% 100%, 0% 100%);
+    -webkit-transition: -webkit-clip-path 1s aese-out;
+    transition: -webkit-clip-path 1s aese-out;
+    transition: clip-path 1s aese-out;
+    transition: clip-path 1s aese-out, -webkit-clip-path 1s aese-out;
+  }
+  25% {
+    -webkit-clip-path: polygon(100% 100%, 100% 0%, 0% 100%, 0% 100%);
+            clip-path: polygon(100% 100%, 100% 0%, 0% 100%, 0% 100%);
+    -webkit-transition: -webkit-clip-path 2s aese-out;
+    transition: -webkit-clip-path 2s aese-out;
+    transition: clip-path 2s aese-out;
+    transition: clip-path 2s aese-out, -webkit-clip-path 2s aese-out;
+  }
+  50% {
+    background: #26976a;
+    -webkit-clip-path: polygon(100% 0%, 0% 0%, 0% 0%, 0% 100%);
+            clip-path: polygon(100% 0%, 0% 0%, 0% 0%, 0% 100%);
+    -webkit-transition: -webkit-clip-path 1s aese-out;
+    transition: -webkit-clip-path 1s aese-out;
+    transition: clip-path 1s aese-out;
+    transition: clip-path 1s aese-out, -webkit-clip-path 1s aese-out;
+  }
+}
+/*# sourceMappingURL=styles.css.map */
