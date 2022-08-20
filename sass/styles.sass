@@ -1,17 +1,15 @@
 @import './_variables'
 @import './_mixins'
 
-
-
-
-
-
 *
   font-family: "josefin sans"
   padding: 0
-  margin: 0
-  scroll-behavior: smooth 
+  margin: 0  
   box-sizing: border-box
+
+html
+  scroll-behavior: smooth 
+  scroll-padding-top: 70px
 
 body
   background-color: $bg-color
@@ -21,69 +19,199 @@ body
     text-decoration: none
     color: $text-color
     transition: 0.3s
-
+    
   ul
     list-style: none
 
-.header  
-  z-index: 2
+.top-nav 
+  position: fixed
   display: flex
-  min-width: 100%
-  position: absolute
-  @include container
-  padding: 1.5rem 5.5rem
+  flex-direction: row
+  align-items: center
   justify-content: space-between
+  font-size: 2rem 
+  padding: 1rem
+  height: 100px
+  width: 100%
+  background-color: black
+  z-index: 99  
 
-  @include mobile
-    padding: 1.1rem
+.logo > a
+  margin: 0 1rem
+  color: $primary-color
+  cursor: pointer
 
-  &-brand  // .header-brand
-    font-size: 2rem
-    color: $primary-color
+.logo > a > span
+  color: $secundary-color
+ 
+.menu 
+  display: flex
+  flex-direction: row
+  list-style-type: none
+  margin: 0
+  padding: 0  
 
-    span
-      color: $secundary-color
+.menu > li 
+  font-size: 19px
+  margin: 0 1rem
+  overflow: hidden   
 
-  &-navbar  // .header-navbar
-    ul  
-      @include flex-center
-      height: 100%
+.menu > li > a
+  color: $text-color
 
-      @include mobile
-        display: none
+  &:hover
+    color: $secundary-color
 
-      li
-        margin: 0 1rem
-        text-transform: uppercase
-        font-size: 0.8rem
+.menu > li > .active
+  color: $secundary-color
 
-        .active
-          color: $secundary-color
+.menu-button-container 
+  display: none
+  flex-direction: column
+  justify-content: center
+  align-items: center
+  height: 100%
+  width: 30px
+  cursor: pointer  
 
-        a
-          color: #fff
-          &:hover
-            color: $secundary-color
+#menu-toggle 
+  display: none
 
-  &-social-media  // .header-social-media
-    ul
-      @include flex-center
-      height: 100%
+.menu-button,
+.menu-button::before,
+.menu-button::after 
+  position: absolute
+  display: block  
+  height: 4px
+  width: 30px
+  margin-right: 3rem  
+  border-radius: 2px
+  background-color: #fff
+  transition: transform 400ms cubic-bezier(0.23, 1, 0.32, 1)  
 
-      @include mobile
-        display: none
+.menu-button::before 
+  content: ''
+  margin-top: -8px
 
-      li
-        margin: 0 1rem
+.menu-button::after 
+  content: ''
+  margin-top: 8px
 
-        a
-          &:hover
-            color: $primary-color
+#menu-toggle:checked + .menu-button-container .menu-button::before 
+  margin-top: 0px
+  transform: rotate(405deg)
+
+#menu-toggle:checked + .menu-button-container .menu-button 
+  background: rgba(255, 255, 255, 0)
+
+#menu-toggle:checked + .menu-button-container .menu-button::after 
+  margin-top: 0px
+  transform: rotate(-405deg)
+
+@include table 
+  .menu-button-container 
+    display: flex
+  
+  .menu 
+    position: absolute
+    flex-direction: column
+    justify-content: center
+    align-items: center
+    margin-top: 100px
+    top: 0    
+    left: 0    
+    width: 100%    
+  
+  #menu-toggle ~ .menu li 
+    height: 0
+    margin: 0
+    padding: 0
+    border: 0
+    transition: height 400ms cubic-bezier(0.23, 1, 0.32, 1)
+  
+  #menu-toggle:checked ~ .menu li 
+    border: 1px solid #333
+    height: 2.5em
+    padding: 0.5em
+    transition: height 400ms cubic-bezier(0.23, 1, 0.32, 1)
+  
+  .menu > li 
+    display: flex
+    justify-content: center
+    font-size: 1.8rem
+    margin: 0
+    padding: 0.5em 0
+    width: 100%
+    color: white
+    background-color: #333    
+  
+  .menu > li:not(:last-child) 
+    border-bottom: 1px solid #444
+  
+
+
+// .header  
+//   z-index: 2
+//   display: flex
+//   min-width: 100%
+//   position: fixed
+//   @include container
+//   padding: 1.5rem 5.5rem
+//   justify-content: space-between
+
+//   @include mobile
+//     padding: 1.1rem
+
+//   &-brand  // .header-brand
+//     font-size: 2rem
+//     color: $primary-color
+    
+//     span
+//       color: $secundary-color
+
+//   &-navbar  // .header-navbar
+//     ul  
+//       @include flex-center
+//       height: 100%
+
+//       @include mobile
+//         display: none
+
+//       li
+//         margin: 0 1rem
+//         text-transform: uppercase
+//         font-size: 0.8rem
+//         display: inline-block
+
+//         .active
+//           color: $secundary-color
+
+//         a
+//           color: #fff
+//           &:hover
+//             color: $secundary-color
+    
+ 
+//   &-social-media  // .header-social-media
+//     ul
+//       @include flex-center
+//       height: 100%
+
+//       @include mobile
+//         display: none
+
+//       li
+//         margin: 0 1rem
+
+//         a
+//           &:hover
+//             color: $primary-color
+
 
 //
 .home
   width: 100%
-  height: 100vh
+  height: 130vh
   display: block
   @include flex-center
   @include bg-page("natureza.jpg")
@@ -113,6 +241,7 @@ body
         width: 100%
         height: 100%
         color: $secundary-color
+
 //
 .gallery
   @include grid-center
@@ -125,7 +254,6 @@ body
 
   @include table
     grid-template-columns: repeat(1,  1fr)
-
 
   &-card  // .gallery-card
     @include flex-center
@@ -184,7 +312,6 @@ body
   #card-9
     @include bg-img("refeicoes.jpg")
 
-
 footer
   text-align: center
   padding: 2rem
@@ -192,8 +319,6 @@ footer
   span
     font-weight: bold
     color: $secundary-color
-
-
 
 @keyframes bounce
   from
